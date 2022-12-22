@@ -35,7 +35,7 @@ public class ClientService {
 		return new ClientDTO(entity);
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public ClientDTO create (ClientDTO dto) {
 		Client entity = new Client();
 		copyDtoToEntity(dto, entity);
@@ -43,7 +43,7 @@ public class ClientService {
 		return new ClientDTO(entity);		
 	}
 	
-	@Transactional(readOnly = true)
+	@Transactional
 	public ClientDTO update (Long id, ClientDTO dto) {
 		try {
 		Client entity = repository.getReferenceById(id);
